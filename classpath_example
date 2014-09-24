@@ -1,0 +1,12 @@
+<!-- Example classpath file for developing with eclipse -->
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="BaseGameUtils/src/" including="*.java|config.json|manifest.xml|manifest.xsl|res/" kind="src" path="android"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/your/path/to/android/sdk/platforms/android-version/android.jar"/>
+	<classpathentry kind="lib" path="/your/path/to/gameclosure_devkit/addons/native-android/TeaLeaf/bin/classes.jar"/>
+	<classpathentry kind="lib" path="android/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry kind="src" path="android/BaseGameUtils/src"/>
+	<classpathentry kind="lib" path="android/BaseGameUtils/libs/android-support-v4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

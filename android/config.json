@@ -1,0 +1,17 @@
+{
+    "copyFiles": [
+        "Debug.java",
+        "GService.java",
+        "GoogleAdmob.java",
+        "GooglePlayGames.java",
+        "GoogleServicesPlugin.java"
+    ],
+    "libraries": [
+        "google-play-services_lib",
+        "BaseGameUtils"
+    ],    
+    "jars": [
+    ],
+    "injectionXML": "manifest.xml",
+	"injectionXSL": "manifest.xsl"
+}

@@ -1,0 +1,37 @@
+<!--START_PLUGINS_MANIFEST-->
+	<!--  Only for development -->
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission> -->
+    <!-- Used to request banner and interstitial ads. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Used to avoid sending an ad request if there is no connectivity. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <!--END_PLUGINS_MANIFEST-->
+    <!--START_PLUGINS_ACTIVITY-->
+       
+    <!--END_PLUGINS_ACTIVITY-->
+    <!--START_PLUGINS_APPLICATION-->
+    
+    	<!-- Debugging -->
+    	<meta-data android:name="GServicesDebug" android:value="" />
+    	
+    	<!--  Admob -->
+        <meta-data android:name="useAdmob" android:value="" />
+        <meta-data android:name="admobType" android:value="" />
+        <meta-data android:name="admobUnitID" android:value="" />
+        <meta-data android:name="testDeviceID" android:value="" />
+
+        
+        <!-- GooglePlay -->
+        <meta-data android:name="useGooglePlay" android:value="" />
+		<meta-data android:name="GooglePlayID" android:value="" />       
+        <meta-data android:name="com.google.android.gms.appstate.APP_ID" android:value="" />
+        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="" />
+        
+         <meta-data android:name="com.google.android.gms.version" 
+    	android:value="@integer/google_play_services_version" />
+
+    	<!-- Activity required to show ad overlays. -->
+    <activity android:name="com.google.android.gms.ads.AdActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+    <!--END_PLUGINS_APPLICATION-->
