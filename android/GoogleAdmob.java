@@ -88,7 +88,6 @@ public class GoogleAdmob extends GService {
 		
 		
 		try {
-			Debug.log("GoogleAdmob: Hola estamos en el try para crear un interstitial");
 			if(!is_banner) {
 				Debug.log("GoogleAdmob: Interstitial Ad");
 				
