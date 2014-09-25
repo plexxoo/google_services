@@ -16,8 +16,13 @@ import android.os.Bundle;
 
 
 public class GService {
+	protected Context _ctx;
 	
 	private String parameter_field_name = "parameters";
+	
+	public void setApplicationContext(Context applicationContext){
+		_ctx = applicationContext;
+	}
 	
 	protected JSONArray extractJSONArrayParameter(JSONObject obj, String parameterName) {
 		try {
