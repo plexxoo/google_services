@@ -86,7 +86,7 @@ RoomStatusUpdateListener, RoomUpdateListener, OnInvitationReceivedListener
 	/** max 4 players required for our game */
 	final static int MAX_PLAYERS = 4;
 	
-	Context _context;
+	
 	Activity _activity;
 
 	// The game helper object. This class is mainly a wrapper around this object.
@@ -177,7 +177,8 @@ RoomStatusUpdateListener, RoomUpdateListener, OnInvitationReceivedListener
 	}
 
 	public void onCreateApplication(Context applicationContext) {
-		_context = applicationContext;
+		Debug.log("GooglePlayGames: onCreateApplication");
+		_ctx = applicationContext;
 	}
 
 	public void onCreate(Activity activity, Bundle savedInstanceState) {
@@ -962,13 +963,18 @@ RoomStatusUpdateListener, RoomUpdateListener, OnInvitationReceivedListener
 	}
 	
 	public void openGooglePlayAppPage(JSONObject data){
-		
-		Uri uri = Uri.parse("market://details?id=" + _context.getPackageName());
-		Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
 		try {
-		  _activity.startActivity(goToMarket);
-		} catch (ActivityNotFoundException e) {
-			_activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + _context.getPackageName())));
+			Uri uri = Uri.parse("market://details?id=" + _ctx.getPackageName());
+			Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+			try {
+			  _activity.startActivity(goToMarket);
+			} catch (ActivityNotFoundException e) {
+				Debug.log("Activity not found exception launched, trying opening google play in navigator.");
+				_activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + _ctx.getPackageName())));
+			}
+		} catch (Exception e){
+			Debug.error("Error at opening google play page because: " + e.getMessage() 
+					+ ". Printing stacktrace", e);
 		}
 	}
 }

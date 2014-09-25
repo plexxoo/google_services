@@ -118,7 +118,6 @@ public class GoogleServicesPlugin implements IPlugin {
 		 		String unitID = manifestKeyMap.get("admobUnitID");
 		 		g_admob.setUnitId(unitID);
 		 		
-		 		Debug.log("Poniendo GoogleAdmob");
 		 		g_services.put("GoogleAdmob", g_admob);
 		 		} catch (Exception e) {
 		 			Debug.error("Error inside checkGoogleAdmob because " + e.toString() +
@@ -146,7 +145,7 @@ public class GoogleServicesPlugin implements IPlugin {
 	 }
 	 
 	 public void onCreate(Activity activity, Bundle savedInstanceState) {
-		 	
+
 		 	loadManifestKeys(activity);
 
 		 	
@@ -170,6 +169,7 @@ public class GoogleServicesPlugin implements IPlugin {
 	    	while(it.hasNext()){
 	    	  String key = it.next();
 	    	  g_services.get(key).onCreate(activity, savedInstanceState);
+	    	  g_services.get(key).setApplicationContext(_ctx);
 	    	}
 	        
 	    }
@@ -177,11 +177,8 @@ public class GoogleServicesPlugin implements IPlugin {
     public void onCreateApplication(Context applicationContext) {
     	_ctx = applicationContext;
     	
-    	Iterator<String> it = g_services.keySet().iterator();
-    	while(it.hasNext()){
-    	  String key = it.next();
-    	  g_services.get(key).onCreateApplication(applicationContext);
-    	}
+    	// In this event, the g_services HashMap is not created
+    	
     }
     
     public void onResume() {

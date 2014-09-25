@@ -116,6 +116,11 @@ var GooglePlay = Class(function () {
     logger.log("{GoogleServices} {GooglePlayGames} Showing Achievements");
     this.sendToPlugin("showAchievements");
   };
+  
+  this.rateApplication = function() {
+  	logger.log("{GoogleServices} {GooglePlayGames} Opening Google Play app page");
+  	this.sendToPlugin("openGooglePlayAppPage");
+  };
 });
 
 var AdMob = Class(function () {
