@@ -20,10 +20,11 @@ Google Play Features
   * **Leaderboard**
   * **Achievements**
   * **Events**: onFirstLogin, onLoginFailed
+  * **(GooglePlay) Rate application** A method to open the application page in Google Play
   
 What is comming 
   * **(Admob) AdEvents** (Loaded, failed, opened, closed & leftApplication) callbacks sended to javascript.
-  * **(GooglePlay) Rate application** A method to open the application page in Google Play
+  
   
 How to Install
 -------------
@@ -176,5 +177,8 @@ g_services.google_play.login(function() {
 	g_services.google_play.showAchievements();
 
 });
+
+// Open your game's Google Play App Page:
+g_services.google_play.rateApplication(); 
 
 ```
