@@ -1,6 +1,10 @@
 Google Services plugin for Gameclosure
 =============
 
+##Important
+This version is being updated to work with [Devkit2](http://github.com/gameclosure/devkit2), so it can be broken during a few days
+
+##Information
 This is a [Gameclosure](http://www.gameclosure.com) plugin for Google Services.
 
 It is based on the following plugins:
@@ -28,9 +32,15 @@ What is comming
   
 How to Install
 -------------
-clone this repo to '''addons''' folder inside devkit and do following
+Update your **manifest.json** *dependencies* like this
 ```
-$ cd google_services
+"dependencies" {
+	"google_services": http://github.com/plexxoo/google_services#v1.1.0
+}
+```
+Access to /yourgamepath/modules/google_services/ and update the android project libs
+```
+$ cd /yourgamepath/modules/google_services/
 $ android update project -p android/google-play-services_lib/
 $ android update project -p android/BaseGameUtils/
 ```
@@ -133,7 +143,7 @@ Admob Usage
 -------------
 
 ```
-import plugins.google_services.google_services as g_services;
+import google_services as g_services;
 
 g_services.admob.loadBanner();
 g_services.admob.showBanner();
@@ -145,7 +155,7 @@ Google Play Usage
 -------------
 
 ```
-import plugins.google_services.google_services as g_services;
+import google_services as g_services;
 
 //Suscribing to do something on a first login:
 g_services.google_play.onFirstLogin(function(){

@@ -1,0 +1,12 @@
+{
+  "name": "devkit-google_services",
+  "version": "1.1.0",
+  "devkit": {
+    "clientPaths": {
+      "google_services": "js"
+    },
+    "extensions": {
+      "android": "android"
+    }
+  }
+}
